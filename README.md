@@ -180,7 +180,7 @@ Selanjutnya dilakukan publish ke tableau public.
 
 Dashboard: [Link dashboard](https://public.tableau.com/app/profile/helmy.satria/viz/DashboardKekerasan/DashboardKekerasan)
 
-## Analisa
+## Analisis
 
 Ada tiga point masalah yang perlu diselesaikan berdasarkan statement masalah yang telah didefinisikan sebelumnya:
 -	Menentukan daerah mana yang perlu diprioritaskan untuk menangani kasus kekerasan
