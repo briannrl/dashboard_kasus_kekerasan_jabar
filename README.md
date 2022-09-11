@@ -113,7 +113,7 @@ Selanjutnya, dilakukan pengecekan apakah terdapat nilai NaN di masing-masing dat
 
 ![nan_terlayani](readme_figures/nan_terlayani.png)
 
-Lalu dibutuhkan data growth jumlah kasus setiap tahun yang dihitung dari jumlah kasus tahun sekarang dibagi dengan jumlah kasus tahun lalu.
+Lalu dibutuhkan data growth jumlah kasus setiap tahun yang dihitung dari jumlah kasus tahun sekarang dikurangi tahun lalu, kemudian dibagi dengan jumlah kasus tahun lalu.
 
 ```python
 (job
