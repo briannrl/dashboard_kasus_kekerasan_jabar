@@ -76,7 +76,7 @@ Ketika kota pada kota disorot akan tampil tren seperti berikut:
 
 ![trend](readme_figures/trend.png)
 
-## Data Wrangling
+## Data Wrangling dan _Exploratory Data Analysis_
 
 Pada tahapan ini, dilakukan proses eksplorasi data lebih detail untuk mendapatkan gambaran data lebih mendalam. Selain itu, dilakukan juga pembersihan data sehingga data dapat langsung dipakai untuk dashboard.
 
