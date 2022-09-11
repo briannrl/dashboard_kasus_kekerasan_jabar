@@ -133,7 +133,7 @@ Lalu dibutuhkan data growth jumlah kasus setiap tahun yang dihitung dari jumlah 
 Hasil dari wrangling di atas diekspor ke file csv dengan method di bawah untuk digunakan di Tableau.
 
 ```python
-to.csv("yoy_case_growth", index=False)
+to.csv("yoy_case_growth.csv", index=False)
 ```
 
 ## Dashboard
