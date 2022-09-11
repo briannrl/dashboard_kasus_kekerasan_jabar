@@ -31,20 +31,20 @@ Untuk menjawab kebutuhan tersebut, maka dibutuhkan sebuah dashboard yang berisik
 ## Overview Process
 Secara umum, proses pengerjaan adalah sebagai berikut:
 ![Working Pipeline](readme_figures/working_pipeline.png)
-1. Eksplorasi Dataset
+__1. Eksplorasi Dataset__
 
 Pada tahapan ini, dilakukan eksplorasi terhadap dataset yang ada. Adapun dataset yang tersedia antara lain:
     -	Data jumlah kasus kekerasan berdasarkan jenis kelamin tiap kota
     -	Data jumlah kasus kekerasan berdasarkan kelompok usia tiap kota
     -	Data jumlah kasus kekerasan berdasarkan pendidikan tiap kota
 
-2.	Menentukan masalah dan persona/user sesuai dengan dashboard yang akan dibuat
+__2. Menentukan masalah dan persona/user sesuai dengan dashboard yang akan dibuat__
 
 Pada tahapan ini, dibuat user persona sesuai dengan permasalahan dan jawaban dari permasalahan yang dimunculkan.
 
 ![Problems](readme_figures/problems.png)
 
-3.	Menentukan feature yang ada di dalam dashboard yang akan dibuat
+__3. Menentukan feature yang ada di dalam dashboard yang akan dibuat__
 
 Pada tahapan ini, dilakukan identifikasi fitur yang dapat digunakan untuk menjawab kebutuhan pengguna. Adapun fiturnya antara lain:
 -	Peta sebaran kenaikan kasus kriminalitas di setiap kabupaten/kota, dilengkapi filter tahun Chart jumlah korban kasus kekerasan untuk kategori: 
@@ -56,13 +56,13 @@ Pada tahapan ini, dilakukan identifikasi fitur yang dapat digunakan untuk menjaw
 - KPI rasio jumlah kasus terlayani terhadap kasus terlapor (Difilter berdasarkan kabupaten/kota dengan cara click di maps dan filter tahun) 
 -	Time series tren kenaikan kasus kekerasan (berupa tool tip di maps)
 
-4.	Membuat Userflow
+__4. Membuat Userflow__
 
 Pada tahapan ini, dibuat sebuah userflow dari kepolisian dengan task memantau jumlah kekerasan di masing-masing kota di Jawa Barat. 
 
 ![userflow](readme_figures/user_flow.png)
 
-5.	Membuat sketch dan wireframe (Hifi Prototype)
+__5. Membuat sketch dan wireframe (Hifi Prototype)__
 
 Setelah memiliki user flow, langkah selanjut nya adalah membuat wireframe. Pada tahap ini kita menyusun informasi apa saja  yang perlu dilihat, dan interaksi apa yang dibutuhkan, untuk membantu pengguna memantau kasus kekerasan di Jawa Barat. Pertama-tama, dibuat sketch untuk memberikan gambaran secara umum informasi yang disajikan.
 
@@ -130,11 +130,7 @@ Lalu dibutuhkan data growth jumlah kasus setiap tahun yang dihitung dari jumlah 
  .drop(columns="growth_cat")
 )
 ```
-Hasil dari wrangling di atas diekspor ke file csv dengan method di bawah untuk digunakan di Tableau.
-
-```python
-to.csv("yoy_case_growth.csv", index=False)
-```
+Hasil dari wrangling di atas diekspor ke file csv digunakan di Tableau.
 
 ## Dashboard
 
@@ -182,7 +178,7 @@ Selanjutnya dilakukan publish ke tableau public.
 
 ![dashboard_public](readme_figures/dashboard_public.png)
 
-Dashboard: [Link dashboard](https://public.tableau.com/app/profile/brian.rl/viz/DashboardKasusKekerasanProvinsiJawaBarat/Dashboard1#1)
+Dashboard: [Link dashboard](https://public.tableau.com/app/profile/helmy.satria/viz/DashboardKekerasan/DashboardKekerasan)
 
 ## Analisa
 
@@ -191,7 +187,7 @@ Ada tiga point masalah yang perlu diselesaikan berdasarkan statement masalah yan
 -	Treatment apa yang perlu diterapkan untuk menangani kasus kekerasan pada daerah yang diprioritaskan
 -	Mengetahui kinerja kepolisian untuk melakukan evaluasi internal
 
-1. Menentukan daerah prioritas
+__1. Menentukan daerah prioritas__
 
 Untuk menjawab masalah daerah mana yang perlu diprioritaskan, diperlukan sebuah peta distribusi prioritas. Sebaran daerah prioritas penanganan kasus dibagi berdasarkan 3 kategori: Bahaya, Waspada, dan Aman. Dimana kategori Bahaya perlu diprioritaskan dibandingkan daerah lainnya. Ketiga kategori ini dibuat berdasarkan rasio tingkat kenaikan kasus dengan tahun sebelumnya. Sebagai contoh, pada tahun 2021 status bahaya ada di kabupaten Cianjur. Artinya, kabupaten Cianjur perlu diprioritaskan dibandingkan daerah lainnya. Hal ini disebabkan karena kenaikan kasus di kabupaten Cianjur selama tahun 2020-2021 mengalami kenaikan paling tinggi, dari 2 kasus terlapor di tahun 2020 menjadi 9 kasus di tahun 2021.
 
@@ -200,7 +196,7 @@ Untuk menjawab masalah daerah mana yang perlu diprioritaskan, diperlukan sebuah 
 
 User dapat melihat detail kenaikan jumlah kasus kekerasan sepanjang tahun 2018-2021 dengan melakukan hovering di masing-masing daerah. Hal ini dapat memberikan gambaran umum mengenai kasus kekerasan yang harapannya selalu turun sepanjang tahun. Selain itu, data jumlah kasus kekerasan juga dapat memberikan gambaran kepada kepolisian mengenai berapa personil yang perlu dilibatkan dalam satuan yang khusus menangani kasus-kasus kekerasan.
 
-2. Menentukan treatment yang tepat pada daerah yang diprioritaskan
+__2. Menentukan treatment yang tepat pada daerah yang diprioritaskan__
 
 Setelah user mengetahui daerah mana yang perlu diprioritaskan, masalah berikutnya adalah bagaimana treatment yang tepat untuk menangani kasus di daerah tersebut. Untuk mengetahui treatment yang tepat, diperlukan proporsi korban kekerasan berdasarkan jenis kelamin, usia, pendidikan, dan pekerjaan. 
 
@@ -208,7 +204,7 @@ Sebagai contoh, pada tahun 2019 di kabupaten Garut, korban kekerasan didominasi 
 
 ![analisa3](readme_figures/analisa3.png)
 
-3. Evaluasi kinerja internal kepolisian
+__3. Evaluasi kinerja internal kepolisian__
 
 Untuk evaluasi internal kepolisian, diperlukan suatu KPI yang menunjukkan efesiensi kasus yang dilayani oleh kepolisian. KPI ini didapatkan dari rasio antara jumlah kasus terlayani dibanding kasus terlapor. Dengan adanya KPI, kepolisian dapat mengevaluasi kinerja internal di tingkat kabupaten dan kota. Sebagai contoh, efesiensi pelayanan untuk kabupaten bogor pada tahun 2021 adalah 35,56%.
 
